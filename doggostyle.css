@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: ivory;
+    background-size: cover;
+}
+
+.sidebar {
+    padding: 2rem;
+    position: absolute;
+    height: 100%;
+    width: 14%;
+    background-color: rgb(43, 122, 226);
+    border-right: 5px solid rgb(0, 0, 255);
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0, 2rem, 2rem, 2rem;
+}
+
+h1 {
+    color: ivory;
+    font-family: 'Indie Flower', cursive;
+    font-size: 154%;
+    letter-spacing: 0.1rem;
+}
+
+.doggos {
+    margin-left: 4rem;
+}
+
+img {
+    margin: 3rem auto 0 auto;
+    border: 5px solid ivory;
+    border-radius: 10%;
+    box-shadow: 5px 5px 5px 5px black;
+    height: 35rem;
+    max-width: 100%;
+}
+
+#logo {
+    box-shadow: none;
+    height: 25%;
+    border: 3px solid ivory;
+    width: 100%;
+    border-radius: 10%;
+    margin-left: -4px;
+}
+
+.spinner {
+    margin: 2rem auto 0 0;
+    position: absolute;
+    top: 45%;
+    right: 48%;
+    display: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 20%;
+    animation: spinner 0.5s linear infinite;
+}
