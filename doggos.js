@@ -16,28 +16,29 @@ const select = document.querySelector('.dropdown');
     });
 
 select.addEventListener('change', function(event) {
-    let spinner = document.querySelector('.spinner').style.display = "block";
-    let breedPics = "https://dog.ceo/api/breed/" + event.target.value + "/images/random";
-    fetch(breedPics).then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        const img = document.createElement('img');
-        img.id = "formerImg";
-        img.src = data.message;
-        img.alt = event.target.value;
+    if (event.target.value == 'Choose breed') {
+        return;
+    } else {
+        let spinner = document.querySelector('.spinner').style.display = "block";
+        let breedPics = "https://dog.ceo/api/breed/" + event.target.value + "/images/random";
+        fetch(breedPics).then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            const img = document.createElement('img');
+            img.id = "formerImg";
+            img.src = data.message;
+            img.alt = event.target.value;
 
-        let spinner = document.querySelector('.spinner').style.display = "none";
-        document.querySelector('.doggos').appendChild(img);
-        document.querySelector('body').style.backgroundImage = 'url(' + data.message + ')';
+            let spinner = document.querySelector('.spinner').style.display = "none";
+            document.querySelector('.doggos').appendChild(img);
+            document.querySelector('body').style.backgroundImage = 'url(' + data.message + ')';
 
-        let formerImg = document.getElementById('formerImg');
-        document.querySelector('.doggos').replaceChild(img, formerImg);
-    })
+            let formerImg = document.getElementById('formerImg');
+            document.querySelector('.doggos').replaceChild(img, formerImg);
+        })
+    }
 });
-
-
-
 
 
 // const BREEDS_URL = "https://dog.ceo/api/breeds/image/random";

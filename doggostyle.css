@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+html {
+    box-sizing: border-box;
+    direction: ltr;
+}
+
 @keyframes spinner {
     to {
         transform: rotateZ(360deg);
@@ -9,6 +14,8 @@
 }
 
 body {
+    min-height: 100vh;
+    width: 100%;
     padding: 0;
     margin: 0;
     background-color: ivory;
@@ -16,59 +23,128 @@ body {
 }
 
 .sidebar {
-    padding: 2rem;
-    position: absolute;
-    height: 100%;
-    width: 14%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+    margin-bottom: 4.5rem; 
+    width: 100%;
     background-color: rgb(43, 122, 226);
-    border-right: 5px solid rgb(0, 0, 255);
+    border-bottom: 5px solid rgb(0, 0, 255);
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
     display: flex;
-    flex-flow: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0, 2rem, 2rem, 2rem;
-}
-
-h1 {
-    color: ivory;
-    font-family: 'Indie Flower', cursive;
-    font-size: 154%;
-    letter-spacing: 0.1rem;
 }
 
 .doggos {
-    margin-left: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 img {
-    margin: 3rem auto 0 auto;
+    max-width: 90%;
+    height: 20rem;
     border: 5px solid ivory;
     border-radius: 10%;
     box-shadow: 5px 5px 5px 5px black;
-    height: 35rem;
-    max-width: 100%;
 }
 
 #logo {
     box-shadow: none;
-    height: 25%;
-    border: 3px solid ivory;
-    width: 100%;
+    height: 46px;
+    width: 41px;
+    margin: 0;
+    border: 1px solid ivory;
     border-radius: 10%;
-    margin-left: -4px;
+}
+
+h1 {
+    margin-left: 0.5rem;
+    color: ivory;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.1rem;
 }
 
 .spinner {
-    margin: 2rem auto 0 0;
+    width: 38px;
+    margin: 0 auto;
     position: absolute;
-    top: 45%;
-    right: 48%;
+    top: 50%;
+    right: 45%;
     display: none;
     box-shadow: none;
     border: none;
     border-radius: 20%;
     animation: spinner 0.5s linear infinite;
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    padding: 0.2rem;
+    background-color: rgb(43, 122, 226);
+    border-top: 5px solid rgb(0, 0, 255);
+    color: ivory;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    .sidebar {
+        justify-content: space-evenly;
+        background-color: rgb(43, 122, 226);
+    }
+}
+
+@media screen and (min-width: 710px) {
+    .sidebar {
+        justify-content: space-between;
+        margin-bottom: 3.5rem;
+    }
+
+    .doggos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    img {
+        height: 25rem;
+    }
+
+    .spinner {
+        right: 47%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .sidebar {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .sidebar {
+        justify-content: center;
+    }
+
+    .title {
+        margin-right: 3rem;
+    }
 }
